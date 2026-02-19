@@ -10,7 +10,7 @@ import pyqtgraph as pg
 
 # --- CONFIGURAÇÕES ---
 FS = 44100  
-DEVICE_INDEX = (3, 5) # (Seu Mic, Seu Fone) - CONFIRA SEUS NÚMEROS AQUI
+DEVICE_INDEX = (3, 5) # os numeros dos seus perifericos de Fone e microfone
 CHUNK = 1024  
 LATENCIA_CORRECAO = 0.33 
 
@@ -172,7 +172,7 @@ class StudioMatt(QMainWindow):
         self.btn_salvar.clicked.connect(self.salvar_projeto)
         topo_layout.addWidget(self.btn_salvar)
 
-        # --- BOTÃO NOVO: LIMPAR TUDO 🗑️ ---
+        # --- LIMPAR TUDO  ---
         self.btn_limpar = BotaoAnimado("🗑️ LIMPAR TUDO")
         self.btn_limpar.setStyleSheet("background-color: #aa0000; color: white; font-weight: bold; padding: 8px; border-radius: 5px;")
         self.btn_limpar.clicked.connect(self.limpar_projeto)
@@ -236,9 +236,9 @@ class StudioMatt(QMainWindow):
         self.timer_visual.timeout.connect(self.atualizar_interface_grafica)
         self.timer_visual.start()
 
-    # --- FUNÇÃO NOVA: LIMPAR TUDO 🗑️ ---
+    # ---  LIMPAR TUDO  ---
     def limpar_projeto(self):
-        # Pergunta de segurança para evitar acidentes
+        # Pergunta de segurança
         resposta = QMessageBox.question(
             self, "Confirmar Limpeza", 
             "Tem certeza que quer apagar TODAS as faixas?\nIsso não pode ser desfeito.",
@@ -260,7 +260,7 @@ class StudioMatt(QMainWindow):
             
             QMessageBox.information(self, "Limpo", "Projeto zerado com sucesso! ✨")
 
-    # --- RESTANTE DAS FUNÇÕES (IGUAIS) ---
+    
     def get_mix_audio(self):
         if not self.faixas: return np.array([0.0])
         tem_solo = any(f.is_solo for f in self.faixas)
