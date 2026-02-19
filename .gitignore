@@ -1,0 +1,8 @@
+# Ignorar arquivos do PyInstaller e Python
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.spec
+*.exe
+.vscode/
