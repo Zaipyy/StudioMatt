@@ -10,7 +10,7 @@ import pyqtgraph as pg
 
 # --- CONFIGURAÇÕES ---
 FS = 44100  
-DEVICE_INDEX = (3, 5) # os numeros dos seus perifericos de Fone e microfone
+DEVICE_INDEX = (3, 5) # os numeros dos seus perifericos de Fone e microfone.
 CHUNK = 1024  
 LATENCIA_CORRECAO = 0.33 
 
